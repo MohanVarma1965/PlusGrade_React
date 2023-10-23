@@ -4,7 +4,7 @@ import {
   createAsyncThunk,
   SerializedError,
 } from "@reduxjs/toolkit";
-import { TaxBracket } from "../../models/tax";
+import { TaxBracket } from "../../redux/models/tax";
 
 interface TaxCalculatorState {
   loading: boolean;

@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import taxCalculatorReducer from "./features/taxCalculator/taxCalculatorSlice";
+import taxCalculatorReducer from "./slices/taxCalculator/taxCalculatorSlice";
 
 export const store = configureStore({
   reducer: {

@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { RootState } from "../../store";
+import { RootState } from "../../redux/store";
 import { Bar } from "react-chartjs-2";
 import "chart.js/auto";
 import "./TaxChartComponenet.css";

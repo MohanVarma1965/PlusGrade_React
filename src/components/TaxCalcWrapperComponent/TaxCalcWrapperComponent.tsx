@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import TaxFormComponent from "../TaxFormComponent/TaxFormComponent";
 import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch } from "../../store";
-import { fetchTaxBrackets } from "../../features/taxCalculator/taxCalculatorSlice";
-import { RootState } from "../../store";
+import { AppDispatch } from "../../redux/store";
+import { fetchTaxBrackets } from "../../redux/slices/taxCalculator/taxCalculatorSlice";
+import { RootState } from "../../redux/store";
 import Notification from "../../utils/Notifications/Notification";
 import TaxDisplayComponent from "../TaxDisplayComponent/TaxDisplayComponent";
 import { CalculateTaxAmountsUtil } from "../../utils/CalculateTaxAmountsUtil/CalculateTaxAmountsUtil";
@@ -14,7 +14,7 @@ import {
   SERVER_ERROR_PREPEND_TEXT,
   PLEASE_TRY_AGAIN_TEXT,
 } from "../../constants/taxConstants";
-import { resetTaxBrackets } from "../../features/taxCalculator/taxCalculatorSlice";
+import { resetTaxBrackets } from "../../redux/slices/taxCalculator/taxCalculatorSlice";
 
 const TaxCalculatorComponent: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
