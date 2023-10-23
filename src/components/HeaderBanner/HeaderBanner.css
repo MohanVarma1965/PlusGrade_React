@@ -1,0 +1,54 @@
+.banner {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  margin: 1em auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 25 / 2;
+  background-color: #00171f;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.banner:hover {
+  transform: scale(1.01);
+  transition: transform 0.3s ease;
+}
+
+.banner-text {
+  position: relative;
+  font-size: 3rem;
+  color: #fff;
+  z-index: 1;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .banner-text {
+    font-size: 2rem;
+    align-items: flex-start;
+  }
+  .banner {
+    border-radius: 0.25rem;
+    margin: 1rem 0px;
+  }
+}
+.square-one {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+  aspect-ratio: 56 / 9;
+  background-color: #007ea7;
+}
+
+.square-two {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  aspect-ratio: 75/6;
+  background-color: #003459;
+}

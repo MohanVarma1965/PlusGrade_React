@@ -1,0 +1,19 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font: inherit;
+}
+
+html,
+body {
+  font-family: cursive;
+  background: #9053c7;
+  background: -webkit-linear-gradient(-135deg, #059fd3, #01253f);
+  background: -o-linear-gradient(-135deg, #059fd3, #01253f);
+  background: -moz-linear-gradient(-135deg, #059fd3, #01253f);
+  background: linear-gradient(-135deg, #059fd3, #01253f);
+  height: 98vh;
+  margin: 0;
+  padding: 0;
+}

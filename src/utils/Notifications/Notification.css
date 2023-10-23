@@ -1,0 +1,20 @@
+.notification {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(-135deg, #861313, #dd0f0f);
+  color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  flex-direction: column;
+}
+
+.notification-icon {
+  width: 28px;
+  height: 1rem;
+}

@@ -1,0 +1,39 @@
+.tax-display-container {
+  padding: 0 1.5rem;
+  border-radius: 1rem;
+  margin: 1.5rem 0;
+}
+
+.tax-title {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.tax-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem 0;
+  border: 1px solid #ccc;
+}
+
+.header {
+  font-weight: bold;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+}
+
+.bracket-range,
+.tax-rate,
+.tax-amount,
+.total-label,
+.total-value {
+  padding: 0.5rem 0;
+  text-align: center;
+  border-bottom: 1px solid #abaed3;
+  background: #e3dae1;
+}
