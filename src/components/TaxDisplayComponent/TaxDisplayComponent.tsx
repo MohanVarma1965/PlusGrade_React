@@ -9,8 +9,10 @@ interface Props {
 
 const TaxDisplayComponent: React.FC<Props> = ({ taxAmounts }) => {
   const taxBrackets = useSelector((state: RootState) => state.taxCalculator.taxBrackets);
-
-  const total = taxAmounts.reduce((acc, current) => acc + current, 0);
+  // Ensure taxAmounts contains only valid numbers
+  const validTaxAmounts = taxAmounts.filter((amount) => typeof amount === "number");
+  // Ensuring the accumulator only gets valid data
+  const total = validTaxAmounts.reduce((acc, current) => acc + current, 0);
 
   return (
     <div className="tax-display-container">
