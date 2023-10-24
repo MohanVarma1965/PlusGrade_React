@@ -14,6 +14,7 @@ const TaxChartComponent: React.FC<Props> = ({ taxAmounts }) => {
 
   const val = {
     labels: taxBrackets.map((bracket) => `${bracket.min} - ${bracket.max || "Above"}`),
+
     datasets: [
       {
         data: taxAmounts,
