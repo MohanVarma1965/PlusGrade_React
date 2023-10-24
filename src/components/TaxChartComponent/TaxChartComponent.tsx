@@ -10,11 +10,22 @@ interface Props {
 }
 
 const TaxChartComponent: React.FC<Props> = ({ taxAmounts }) => {
-  const taxBrackets = useSelector((state: RootState) => state.taxCalculator.taxBrackets);
+  // Grab the values from state
+  const { taxBrackets, loading, error } = useSelector((state: RootState) => state.taxCalculator);
 
+  // This component will not be reached if loading or error is true,
+  // however below loops will handle those cases incase this component is executed
+  // If Loading is set to true return a label Loading
+  if (loading) {
+    return <div className="tax-chart-container">Loading...</div>;
+  }
+  // If error is present, show the error message
+  if (error) {
+    return <div className="tax-chart-container">Error: {error}</div>;
+  }
+  // Preparing object suitable to chart library
   const val = {
     labels: taxBrackets.map((bracket) => `${bracket.min} - ${bracket.max || "Above"}`),
-
     datasets: [
       {
         data: taxAmounts,
@@ -22,7 +33,7 @@ const TaxChartComponent: React.FC<Props> = ({ taxAmounts }) => {
       },
     ],
   };
-
+  //Return the componenet with the Chart
   return (
     <div className="tax-chart-container">
       <h3 className="tax-chart-title">Tax Breakdown</h3>
