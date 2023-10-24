@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction, createAsyncThunk, SerializedError } from "@reduxjs/toolkit";
 import { TaxBracket } from "../../models/tax";
 
-import { fetchTaxBracketsApi } from "./api";
-import { TaxCalculatorState, initialState } from "./state";
+import { fetchTaxBracketsApi } from "./taxCalculator_api";
+import { initialState } from "./tacCalculator_state";
 
 export const fetchTaxBrackets = createAsyncThunk<TaxBracket[], number, { rejectValue: string }>(
   "taxCalculator/fetchTaxBrackets",

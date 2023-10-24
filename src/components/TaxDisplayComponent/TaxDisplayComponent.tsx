@@ -5,17 +5,32 @@ import "./TaxDisplayComponenet.css";
 
 interface Props {
   taxAmounts: number[];
+  income: number;
 }
 
-const TaxDisplayComponent: React.FC<Props> = ({ taxAmounts }) => {
+const TaxDisplayComponent: React.FC<Props> = ({ taxAmounts, income }) => {
   const taxBrackets = useSelector((state: RootState) => state.taxCalculator.taxBrackets);
   // Ensure taxAmounts contains only valid numbers
   const validTaxAmounts = taxAmounts.filter((amount) => typeof amount === "number");
   // Ensuring the accumulator only gets valid data
   const total = validTaxAmounts.reduce((acc, current) => acc + current, 0);
 
+  // Check if income is 0
+  const effectiveMargin = income !== 0 ? (total / income) * 100 : 0;
+
   return (
     <div className="tax-display-container">
+      <div className="summary-section">
+        <div className="summary-item">
+          <label>Effective Margin</label>
+          <span>{effectiveMargin.toFixed(2)}%</span>
+        </div>
+        <div className="summary-item">
+          <label>Total Taxes</label>
+          <span>${total.toFixed(2)}</span>
+        </div>
+      </div>
+
       <h3 className="tax-title">Tax Breakdown by Brackets</h3>
       <div className="tax-grid">
         <div className="header">Tax Bracket</div>
@@ -28,9 +43,6 @@ const TaxDisplayComponent: React.FC<Props> = ({ taxAmounts }) => {
             <div className="tax-amount">${taxAmounts[index] ? taxAmounts[index].toFixed(2) : "0.00"}</div>
           </React.Fragment>
         ))}
-        <div className="total-label">Total Tax</div>
-        <div className="tax-rate"></div> {/* empty place holder */}
-        <div className="total-value">${total.toFixed(2)}</div>
       </div>
     </div>
   );

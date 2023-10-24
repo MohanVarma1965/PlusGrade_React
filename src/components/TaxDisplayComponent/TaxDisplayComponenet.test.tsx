@@ -29,7 +29,7 @@ describe("<TaxDisplayComponent />", () => {
       // Render the TaxDisplayComponent
       const { getByText, findAllByText } = render(
         <Provider store={mockStore}>
-          <TaxDisplayComponent taxAmounts={[750, 1500]} />
+          <TaxDisplayComponent taxAmounts={[750, 1500]} income={100000} />
         </Provider>
       );
 
@@ -74,7 +74,7 @@ describe("<TaxDisplayComponent />", () => {
       // Render the TaxDisplayComponent
       const { getByText, queryByText } = render(
         <Provider store={mockStore}>
-          <TaxDisplayComponent taxAmounts={[]} />
+          <TaxDisplayComponent taxAmounts={[]} income={100000} />
         </Provider>
       );
 
@@ -113,7 +113,7 @@ describe("<TaxDisplayComponent />", () => {
         // Render the TaxDisplayComponent
         const { getByText, queryByText } = render(
           <Provider store={mockStore}>
-            <TaxDisplayComponent taxAmounts={[]} />
+            <TaxDisplayComponent taxAmounts={[]} income={100000} />
           </Provider>
         );
 

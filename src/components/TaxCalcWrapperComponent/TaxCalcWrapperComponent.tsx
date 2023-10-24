@@ -55,7 +55,7 @@ const TaxCalculatorComponent: React.FC = () => {
       {taxAmounts.length > 0 && !error && (
         <div className="components-container">
           <div className="tile">
-            <TaxDisplayComponent taxAmounts={taxAmounts} />
+            <TaxDisplayComponent taxAmounts={taxAmounts} income={income} />
           </div>
           <div className="tile">
             <TaxChartComponent taxAmounts={taxAmounts} />
