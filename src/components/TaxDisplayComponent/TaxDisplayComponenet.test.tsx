@@ -89,37 +89,99 @@ describe("<TaxDisplayComponent />", () => {
       expect(queryByText(/\$0 - \$5000/i)).not.toBeInTheDocument();
       expect(queryByText("0.15")).not.toBeInTheDocument();
     });
-
-    // Case 3: Handling when tax bracket doesn't have the Max value
-    describe("Case 3. Handling when tax bracket doesn't have the Max value", () => {
-      it("3.1 Should display Above", () => {
-        // Mock the store with empty taxBrackets
-        const mockStore = configureStore({
-          reducer: {
-            taxCalculator: taxCalculatorReducer,
+  });
+  // Case 3: Handling when tax bracket doesn't have the Max value
+  describe("Case 3. Handling when tax bracket doesn't have the Max value", () => {
+    it("3.1 Should display Above", () => {
+      // Mock the store with empty taxBrackets
+      const mockStore = configureStore({
+        reducer: {
+          taxCalculator: taxCalculatorReducer,
+        },
+        preloadedState: {
+          taxCalculator: {
+            loading: false,
+            error: null,
+            taxBrackets: [
+              { min: 0, max: 5000, rate: 0.15 },
+              { min: 5000, rate: 0.15 },
+            ],
           },
-          preloadedState: {
-            taxCalculator: {
-              loading: false,
-              error: null,
-              taxBrackets: [
-                { min: 0, max: 5000, rate: 0.15 },
-                { min: 5000, rate: 0.15 },
-              ],
-            },
-          },
-        });
-
-        // Render the TaxDisplayComponent
-        const { getByText, queryByText } = render(
-          <Provider store={mockStore}>
-            <TaxDisplayComponent taxAmounts={[]} income={100000} />
-          </Provider>
-        );
-
-        // 3.1 Should display Above
-        expect(queryByText(/Above/i)).toBeInTheDocument();
+        },
       });
+
+      // Render the TaxDisplayComponent
+      const { getByText, queryByText } = render(
+        <Provider store={mockStore}>
+          <TaxDisplayComponent taxAmounts={[]} income={100000} />
+        </Provider>
+      );
+
+      // 3.1 Should display Above
+      expect(queryByText(/Above/i)).toBeInTheDocument();
+    });
+  });
+
+  // Case 4: Handling scenarios when income is 0
+  describe("Case 4. Displaying effective margin correctly based on income value", () => {
+    it("4.1 should display an effective margin of 0% if the income is 0", () => {
+      // Mock the store with taxBrackets
+      const mockStore = configureStore({
+        reducer: {
+          taxCalculator: taxCalculatorReducer,
+        },
+        preloadedState: {
+          taxCalculator: {
+            loading: false,
+            error: null,
+            taxBrackets: [
+              { min: 0, max: 5000, rate: 0.15 },
+              { min: 5000, max: 10000, rate: 0.15 },
+            ],
+          },
+        },
+      });
+
+      // Render the TaxDisplayComponent with 0 income
+      const { getByText } = render(
+        <Provider store={mockStore}>
+          <TaxDisplayComponent taxAmounts={[750, 1500]} income={0} />
+        </Provider>
+      );
+
+      // Ensure effective margin is 0%
+      expect(getByText(/Effective Margin/i)).toBeInTheDocument();
+      expect(getByText(/0.00%/i)).toBeInTheDocument();
+    });
+
+    it("4.2 should display the correct effective margin if the income is non-zero", () => {
+      // Mock the store with taxBrackets
+      const mockStore = configureStore({
+        reducer: {
+          taxCalculator: taxCalculatorReducer,
+        },
+        preloadedState: {
+          taxCalculator: {
+            loading: false,
+            error: null,
+            taxBrackets: [
+              { min: 0, max: 5000, rate: 0.15 },
+              { min: 5000, max: 10000, rate: 0.15 },
+            ],
+          },
+        },
+      });
+
+      // Render the TaxDisplayComponent with non-zero income
+      const { getByText } = render(
+        <Provider store={mockStore}>
+          <TaxDisplayComponent taxAmounts={[750, 1500]} income={100000} />
+        </Provider>
+      );
+
+      // Ensure effective margin is correctly calculated
+      expect(getByText(/Effective Margin/i)).toBeInTheDocument();
+      expect(getByText(/2.25%/i)).toBeInTheDocument();
     });
   });
 });
