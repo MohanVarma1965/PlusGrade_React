@@ -1,23 +1,14 @@
-import {
-  createSlice,
-  PayloadAction,
-  createAsyncThunk,
-  SerializedError,
-} from "@reduxjs/toolkit";
+import { createSlice, PayloadAction, createAsyncThunk, SerializedError } from "@reduxjs/toolkit";
 import { TaxBracket } from "../../models/tax";
 
 import { fetchTaxBracketsApi } from "./api";
 import { TaxCalculatorState, initialState } from "./state";
 
-export const fetchTaxBrackets = createAsyncThunk<
-  TaxBracket[],
-  number,
-  { rejectValue: string }
->(
+export const fetchTaxBrackets = createAsyncThunk<TaxBracket[], number, { rejectValue: string }>(
   "taxCalculator/fetchTaxBrackets",
   async (year: number, { rejectWithValue }) => {
     try {
-      const taxBrackets = await await fetchTaxBracketsApi(year);
+      const taxBrackets = await fetchTaxBracketsApi(year);
       return taxBrackets;
     } catch (error) {
       if (error instanceof Error && error.message) {
@@ -42,14 +33,11 @@ const taxCalculatorSlice = createSlice({
       .addCase(fetchTaxBrackets.pending, (state) => {
         state.loading = true;
       })
-      .addCase(
-        fetchTaxBrackets.fulfilled,
-        (state, action: PayloadAction<TaxBracket[]>) => {
-          state.loading = false;
-          state.taxBrackets = action.payload;
-          state.error = null;
-        }
-      ) // Handling rejected promises
+      .addCase(fetchTaxBrackets.fulfilled, (state, action: PayloadAction<TaxBracket[]>) => {
+        state.loading = false;
+        state.taxBrackets = action.payload;
+        state.error = null;
+      }) // Handling rejected promises
       .addCase(
         fetchTaxBrackets.rejected,
         (

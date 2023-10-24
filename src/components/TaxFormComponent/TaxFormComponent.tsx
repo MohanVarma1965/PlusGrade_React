@@ -10,14 +10,7 @@ interface TaxFormProps {
   loading: boolean;
 }
 
-const TaxFormComponent: React.FC<TaxFormProps> = ({
-  income,
-  year,
-  setIncome,
-  setYear,
-  handleCalculate,
-  loading,
-}) => {
+const TaxFormComponent: React.FC<TaxFormProps> = ({ income, year, setIncome, setYear, handleCalculate, loading }) => {
   return (
     <form className="tax-form">
       <div className="input-group">
@@ -37,12 +30,7 @@ const TaxFormComponent: React.FC<TaxFormProps> = ({
         <label htmlFor="taxYear" className="input-label">
           Tax Year:
         </label>
-        <select
-          id="taxYear"
-          className="dropdown"
-          value={year}
-          onChange={(e) => setYear(parseInt(e.target.value, 10))}
-        >
+        <select id="taxYear" className="dropdown" value={year} onChange={(e) => setYear(parseInt(e.target.value, 10))}>
           <option value={2022}>2022</option>
           <option value={2021}>2021</option>
           <option value={2020}>2020</option>
@@ -50,11 +38,7 @@ const TaxFormComponent: React.FC<TaxFormProps> = ({
         </select>
       </div>
 
-      <button
-        className="calculate-button"
-        onClick={handleCalculate}
-        disabled={loading}
-      >
+      <button className="calculate-button" onClick={handleCalculate} disabled={loading}>
         Calculate Tax
       </button>
     </form>

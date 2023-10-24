@@ -8,9 +8,7 @@ interface Props {
 }
 
 const TaxDisplayComponent: React.FC<Props> = ({ taxAmounts }) => {
-  const taxBrackets = useSelector(
-    (state: RootState) => state.taxCalculator.taxBrackets
-  );
+  const taxBrackets = useSelector((state: RootState) => state.taxCalculator.taxBrackets);
 
   const total = taxAmounts.reduce((acc, current) => acc + current, 0);
 
@@ -23,13 +21,9 @@ const TaxDisplayComponent: React.FC<Props> = ({ taxAmounts }) => {
         <div className="header">Tax Amount</div>
         {taxBrackets.map((bracket, index) => (
           <React.Fragment key={index}>
-            <div className="bracket-range">{`$${bracket.min} - $${
-              bracket.max || "Above"
-            }`}</div>
+            <div className="bracket-range">{`$${bracket.min} - $${bracket.max || "Above"}`}</div>
             <div className="tax-rate">{bracket.rate || "N/A"}</div>
-            <div className="tax-amount">
-              ${taxAmounts[index] ? taxAmounts[index].toFixed(2) : "0.00"}
-            </div>
+            <div className="tax-amount">${taxAmounts[index] ? taxAmounts[index].toFixed(2) : "0.00"}</div>
           </React.Fragment>
         ))}
         <div className="total-label">Total Tax</div>

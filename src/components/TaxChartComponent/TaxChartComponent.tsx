@@ -10,24 +10,14 @@ interface Props {
 }
 
 const TaxChartComponent: React.FC<Props> = ({ taxAmounts }) => {
-  const taxBrackets = useSelector(
-    (state: RootState) => state.taxCalculator.taxBrackets
-  );
+  const taxBrackets = useSelector((state: RootState) => state.taxCalculator.taxBrackets);
 
   const val = {
-    labels: taxBrackets.map(
-      (bracket) => `${bracket.min} - ${bracket.max || "Above"}`
-    ),
+    labels: taxBrackets.map((bracket) => `${bracket.min} - ${bracket.max || "Above"}`),
     datasets: [
       {
         data: taxAmounts,
-        backgroundColor: [
-          "#FF6384",
-          "#36A2EB",
-          "#FFCE56",
-          "#4BC0C0",
-          "#FF9F40",
-        ],
+        backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#FF9F40"],
       },
     ],
   };

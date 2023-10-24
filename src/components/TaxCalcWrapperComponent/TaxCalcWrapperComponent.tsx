@@ -10,10 +10,7 @@ import { CalculateTaxAmountsUtil } from "../../utils/CalculateTaxAmountsUtil/Cal
 import TaxChartComponent from "../TaxChartComponent/TaxChartComponent";
 import "./TaxCalculatorWrapper.css";
 import Spinner from "../../utils/Spinner/Spinner";
-import {
-  SERVER_ERROR_PREPEND_TEXT,
-  PLEASE_TRY_AGAIN_TEXT,
-} from "../../constants/taxConstants";
+import { SERVER_ERROR_PREPEND_TEXT, PLEASE_TRY_AGAIN_TEXT } from "../../constants/taxConstants";
 import { resetTaxBrackets } from "../../redux/slices/taxCalculator/taxCalculatorSlice";
 
 const TaxCalculatorComponent: React.FC = () => {
@@ -27,13 +24,9 @@ const TaxCalculatorComponent: React.FC = () => {
     dispatch(fetchTaxBrackets(year));
   };
 
-  const loading = useSelector(
-    (state: RootState) => state.taxCalculator.loading
-  );
+  const loading = useSelector((state: RootState) => state.taxCalculator.loading);
 
-  const taxBrackets = useSelector(
-    (state: RootState) => state.taxCalculator.taxBrackets
-  );
+  const taxBrackets = useSelector((state: RootState) => state.taxCalculator.taxBrackets);
 
   useEffect(() => {
     const newTaxAmounts = CalculateTaxAmountsUtil(income, taxBrackets);
@@ -50,15 +43,7 @@ const TaxCalculatorComponent: React.FC = () => {
   return (
     <div>
       <Spinner visible={loading} />
-      {error && (
-        <Notification
-          arrMessages={[
-            SERVER_ERROR_PREPEND_TEXT,
-            error,
-            PLEASE_TRY_AGAIN_TEXT,
-          ]}
-        />
-      )}
+      {error && <Notification arrMessages={[SERVER_ERROR_PREPEND_TEXT, error, PLEASE_TRY_AGAIN_TEXT]} />}
       <TaxFormComponent
         income={income}
         year={year}
