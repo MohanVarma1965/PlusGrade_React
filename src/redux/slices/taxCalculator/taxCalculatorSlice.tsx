@@ -11,11 +11,13 @@ export const fetchTaxBrackets = createAsyncThunk<TaxBracket[], number, { rejectV
       const taxBrackets = await fetchTaxBracketsApi(year);
       return taxBrackets;
     } catch (error) {
-      if (error instanceof Error && error.message) {
+      if (error instanceof Error) {
+        if (error.message === "Request is taking too long!") {
+          return rejectWithValue("Request is taking too long!");
+        }
         return rejectWithValue(error.message);
-      } else {
-        return rejectWithValue("Unknown error ");
       }
+      return rejectWithValue("Unknown error");
     }
   }
 );
