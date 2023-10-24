@@ -15,8 +15,8 @@ const TaxDisplayComponent: React.FC<Props> = ({ taxAmounts, income }) => {
   // Ensuring the accumulator only gets valid data
   const total = validTaxAmounts.reduce((acc, current) => acc + current, 0);
 
-  // Check if income is 0
-  const effectiveMargin = income !== 0 ? (total / income) * 100 : 0;
+  // Check if income is 0 or NaN
+  const effectiveMargin = income !== 0 && !isNaN(income) ? (total / income) * 100 : 0;
 
   return (
     <div className="tax-display-container">

@@ -1,3 +1,5 @@
+/***** START::Section covers the CSS for header banner*******/
+
 .banner {
   position: relative;
   max-width: 1200px;
@@ -25,7 +27,7 @@
   font-weight: bold;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .banner-text {
     font-size: 2rem;
     align-items: flex-start;
@@ -33,6 +35,7 @@
   .banner {
     border-radius: 0.25rem;
     margin: 1rem 0px;
+    aspect-ratio: 15 / 2;
   }
 }
 .square-one {
@@ -52,3 +55,5 @@
   aspect-ratio: 75/6;
   background-color: #003459;
 }
+
+/***** END::Section covers the CSS for header banner*******/

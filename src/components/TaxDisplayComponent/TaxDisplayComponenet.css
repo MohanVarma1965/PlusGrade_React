@@ -4,7 +4,7 @@
   margin: 1.5rem 0;
 }
 
-/*************************************************************/
+/** START:: Contains total tax and Effective tax margin CSS*********/
 .summary-section {
   background: #9053c7;
   border-radius: 1rem;
@@ -41,8 +41,9 @@
   margin-bottom: 0.3125rem;
 }
 
-/*************************************************************/
+/** END:: Contains total tax and Effective tax margin CSS*********/
 
+/** START:: CSS for tiles*********/
 .tax-title {
   text-align: center;
   margin-bottom: 1rem;
@@ -76,3 +77,4 @@
   border-bottom: 1px solid #abaed3;
   background: #e3dae1;
 }
+/** END:: CSS for tiles*********/

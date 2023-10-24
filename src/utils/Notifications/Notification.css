@@ -1,3 +1,4 @@
+/***START::: Notification css ***/
 .notification {
   display: flex;
   align-items: center;
@@ -18,3 +19,4 @@
   width: 28px;
   height: 1rem;
 }
+/***END::: Notification css ***/

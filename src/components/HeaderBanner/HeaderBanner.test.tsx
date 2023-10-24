@@ -1,8 +1,8 @@
 import { render } from "@testing-library/react";
 import HeaderBanner from "./HeaderBanner";
 
-describe("<HeaderBanner />", () => {
-  it("Renders the Banner component", () => {
+describe(" Case 1: HeaderBanner />", () => {
+  it("1.1 Renders the Banner component", () => {
     const { getByText, container } = render(<HeaderBanner />);
 
     // Check if "Tax Calculator" banner is present
