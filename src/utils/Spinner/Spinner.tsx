@@ -8,7 +8,7 @@ interface SpinnerProps {
 const Spinner: React.FC<SpinnerProps> = ({ visible }) => {
   if (!visible) return null;
   return (
-    <div className="center-spinner">
+    <div className="center-spinner" data-testid="spinner-element">
       <div className="loader"></div>
     </div>
   );
