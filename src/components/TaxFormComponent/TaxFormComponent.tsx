@@ -38,7 +38,7 @@ const TaxFormComponent: React.FC<TaxFormProps> = ({ income, year, setIncome, set
         </select>
       </div>
 
-      <button className="calculate-button" onClick={handleCalculate} disabled={loading}>
+      <button type="button" className="calculate-button" onClick={handleCalculate} disabled={loading}>
         Calculate Tax
       </button>
     </form>
