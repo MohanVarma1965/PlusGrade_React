@@ -39,7 +39,7 @@ Here, users are presented with fields to input their Annual Income and choose th
 
 ![Home Page](docs/images/LandingPage.png)
 
-### Results Page - Large
+### Results Page - Large Screen
 
 Upon providing the Annual Income and Tax Year details, the application showcases the Effective Margin, Total Taxes, and a comparative chart. While a Bar Chart is displayed by default, users also have the option to switch to a Line Chart.
 
@@ -49,3 +49,23 @@ Upon providing the Annual Income and Tax Year details, the application showcases
 
 The design is adaptive. When viewed on devices with smaller screens, the layout adjusts for the best user experience.
 ![Results Page Small screen](docs/images/ResultsSmallScreen.png)
+
+### Results page - Line Chart
+
+![Line Chart](LineChart.png)
+
+### Loading Indicator for Ongoing Tasks
+
+When the user has a task that's still pending, the application displays a loading spinner to enhance user interaction.
+
+![Spinner](Spinner.png)
+
+### Server Response Failure
+
+Should the application fail to obtain a response, it provides error notifications to inform the user.
+![Server Error](ServerError.png)
+
+### Delayed Server Response
+
+If the application doesn't receive a response within the defined timeout period, it triggers a distinct error notification. Currently, the application waits for 6 seconds before the promise gets rejected.
+![RequestTimeout](RequestTimeout.png)
