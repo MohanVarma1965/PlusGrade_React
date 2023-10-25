@@ -31,8 +31,17 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### Appplication Details
 
-Tax Calcualtor is a Responsive Single page application which gets adopted based on the the device dimentions.
+The Tax Calculator is an interactive single-page application that showcases annual tax rates for the years 2019 through 2022. It's designed for adaptability, making sure it transitions smoothly across different screen dimensions.
 
-### Home Page
+### Landing Page
 
-Gives you a option to enter the Annual Income and to select the Tax Year. Once you select those options we can click on the Calculate Tax button.
+Here, users are presented with fields to input their Annual Income and choose the relevant Tax Year. After making these selections, they can proceed by clicking the "Calculate Tax" button.
+
+![Home Page](docs/images/LandingPage.png)
+
+Upon providing the Annual Income and Tax Year details, the application showcases the Effective Margin, Total Taxes, and a comparative chart. While a Bar Chart is displayed by default, users also have the option to switch to a Line Chart.
+
+![Results page - Largerscreen](docs/images/ResultsLargeScreen.png)
+
+The design is adaptive. When viewed on devices with smaller screens, the layout adjusts for the best user experience.
+![Results Page Small screen](docs/images/ResultsSmallScreen.png)
