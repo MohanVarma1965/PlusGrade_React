@@ -39,9 +39,13 @@ Here, users are presented with fields to input their Annual Income and choose th
 
 ![Home Page](docs/images/LandingPage.png)
 
+### Results Page - Large
+
 Upon providing the Annual Income and Tax Year details, the application showcases the Effective Margin, Total Taxes, and a comparative chart. While a Bar Chart is displayed by default, users also have the option to switch to a Line Chart.
 
 ![Results page - Largerscreen](docs/images/ResultsLargeScreen.png)
+
+### Results Page - Small screen
 
 The design is adaptive. When viewed on devices with smaller screens, the layout adjusts for the best user experience.
 ![Results Page Small screen](docs/images/ResultsSmallScreen.png)
