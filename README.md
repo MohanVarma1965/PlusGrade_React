@@ -52,20 +52,20 @@ The design is adaptive. When viewed on devices with smaller screens, the layout 
 
 ### Results page - Line Chart
 
-![Line Chart](LineChart.png)
+![Line Chart](docs/images/LineChart.png)
 
 ### Loading Indicator for Ongoing Tasks
 
 When the user has a task that's still pending, the application displays a loading spinner to enhance user interaction.
 
-![Spinner](Spinner.png)
+![Spinner](docs/images/Spinner.png)
 
 ### Server Response Failure
 
 Should the application fail to obtain a response, it provides error notifications to inform the user.
-![Server Error](ServerError.png)
+![Server Error](docs/images/ServerError.png)
 
 ### Delayed Server Response
 
 If the application doesn't receive a response within the defined timeout period, it triggers a distinct error notification. Currently, the application waits for 6 seconds before the promise gets rejected.
-![RequestTimeout](RequestTimeout.png)
+![RequestTimeout](docs/images/RequestTimeout.png)
