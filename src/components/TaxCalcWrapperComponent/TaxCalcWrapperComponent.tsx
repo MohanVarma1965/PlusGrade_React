@@ -3,26 +3,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../../redux/store";
 import { fetchTaxBrackets } from "../../redux/slices/taxCalculator/taxCalculatorSlice";
 import { RootState } from "../../redux/store";
-
-// Utility imports
 import { CalculateTaxAmountsUtil } from "../../utils/CalculateTaxAmountsUtil/CalculateTaxAmountsUtil";
 import Spinner from "../../utils/Spinner/Spinner";
 import { SERVER_ERROR_PREPEND_TEXT, PLEASE_TRY_AGAIN_TEXT } from "../../constants/taxConstants";
 import { resetTaxBrackets } from "../../redux/slices/taxCalculator/taxCalculatorSlice";
-
-//component imports
 import TaxFormComponent from "../TaxFormComponent/TaxFormComponent";
 import Notification from "../../utils/Notifications/Notification";
 import TaxDisplayComponent from "../TaxDisplayComponent/TaxDisplayComponent";
-
 import TaxChartComponent from "../TaxChartComponent/TaxChartComponent";
 import "./TaxCalculatorWrapper.css";
 
 // Main Tax Calculation Wrapper Component
 const TaxCalcWrapperComponent: React.FC = () => {
-  // Setup Redux dispatch
   const dispatch = useDispatch<AppDispatch>();
-  // State declarations for income, year and calculated tax amounts
   const [income, setIncome] = useState<number>(125000);
   const [year, setYear] = useState<number>(2022);
   const [taxAmounts, setTaxAmounts] = useState<number[]>([]);
@@ -32,10 +25,7 @@ const TaxCalcWrapperComponent: React.FC = () => {
     dispatch(fetchTaxBrackets(year));
   };
 
-  // Retrieve loading state from the Redux store
   const loading = useSelector((state: RootState) => state.taxCalculator.loading);
-
-  // Retrieve tax brackets from the Redux store
   const taxBrackets = useSelector((state: RootState) => state.taxCalculator.taxBrackets);
 
   // useEffect to recalculate tax amounts when income or tax brackets change
@@ -44,7 +34,6 @@ const TaxCalcWrapperComponent: React.FC = () => {
     setTaxAmounts(newTaxAmounts);
   }, [income, taxBrackets]);
 
-  // Retrieve any error messages from the Redux store
   const error = useSelector((state: RootState) => state.taxCalculator.error);
 
   // Handle year changes and reset relevant state and Redux store data
@@ -52,9 +41,9 @@ const TaxCalcWrapperComponent: React.FC = () => {
     setYear(newYear);
     // Reset tax amounts when year changes
     setTaxAmounts([]);
-    // Reset tax brackets in Redux state when year changesss
     dispatch(resetTaxBrackets());
   };
+
   return (
     <div>
       {/* This will attach the spinner if loading is set to true*/}

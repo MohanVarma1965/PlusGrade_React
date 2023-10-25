@@ -10,7 +10,7 @@ describe("Case 1. Spinner Component", () => {
   });
 
   // 2. Spinner Visibility Test
-  it("2.1 Displays spinner when 'visible' prop is true", () => {
+  it("1.2 Displays spinner when 'visible' prop is true", () => {
     // Render the Spinner component with 'visible' set to true
     const { getByTestId } = render(<Spinner visible={true} />);
 
@@ -20,7 +20,7 @@ describe("Case 1. Spinner Component", () => {
   });
 
   // 3. Spinner Invisibility Test
-  it("3.1 Does not display spinner when 'visible' prop is false", () => {
+  it("1.3 Does not display spinner when 'visible' prop is false", () => {
     // Render the Spinner component with 'visible' set to false
     const { queryByTestId } = render(<Spinner visible={false} />);
 
@@ -30,7 +30,7 @@ describe("Case 1. Spinner Component", () => {
   });
 
   // 4. Spinner Classname Test
-  it("4.1 Has the correct classname when visible", () => {
+  it("1.4 Has the correct classname when visible", () => {
     // Render the Spinner component with 'visible' set to true
     const { getByTestId } = render(<Spinner visible={true} />);
 

@@ -1,3 +1,5 @@
+![Tax Calculator](docs/images/taxCalcOverview.gif)
+
 # Getting Started with Tax Calculator Application
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -28,6 +30,15 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### Need to pull and run the Docer image to access the API
+
+In order to run the API locally, please follow these instructions:
+
+docker pull ptsdocker16/interview-test-server
+docker run --init -p 5000:5000 -it ptsdocker16/interview-test-server
+
+Navigate to http://localhost:5000. You should be greeted with this set of instructions, and access to the different available endpoints. The following are the relevant endpoints:
 
 ### Appplication Details
 
