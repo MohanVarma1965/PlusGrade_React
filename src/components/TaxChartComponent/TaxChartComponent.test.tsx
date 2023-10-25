@@ -97,7 +97,7 @@ describe("<TaxChartComponent />", () => {
         </Provider>
       );
       // Expect the title to be displayed
-      expect(getByText(/Tax Breakdown/i)).toBeInTheDocument();
+      expect(getByText(/Select Chart Type/i)).toBeInTheDocument();
 
       // Negative test to check Error  is not present
       expect(queryByText(/Error/i)).not.toBeInTheDocument();
