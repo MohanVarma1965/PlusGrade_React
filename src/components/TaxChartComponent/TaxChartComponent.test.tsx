@@ -7,11 +7,11 @@ import TaxChartComponent from "./TaxChartComponent";
 
 // Mocking the chart import
 jest.mock("react-chartjs-2", () => ({
-  Bar: () => null, // This is just a placeholder, you can modify as needed
+  Bar: () => null,
 }));
 
-describe("<TaxChartComponent />", () => {
-  //Case 1: When the state has loading set to true
+describe(" Case 1: TaxChartComponent />", () => {
+  // When the state has loading set to true
   describe("Case 1. Loading state set to true", () => {
     it("1.1 should display loading state", () => {
       //Mock the store

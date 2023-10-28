@@ -46,7 +46,7 @@ const TaxChartComponent: React.FC<Props> = ({ taxAmounts }) => {
   };
 
   return (
-    <div className="tax-chart-container">
+    <div className="tax-chart-container" data-testid="tax-chart-component">
       <div className="chart-selection-container">
         <label htmlFor="chartType" className="chart-type-label">
           Select Chart Type

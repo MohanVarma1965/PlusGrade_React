@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Case 1. Spinner Component 1.5 matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    aria-busy="true"
+    aria-label="Loading..."
+    class="center-spinner"
+    data-testid="spinner-element"
+    role="progressbar"
+  >
+    <div
+      class="loader"
+    />
+  </div>
+</DocumentFragment>
+`;

@@ -15,7 +15,7 @@ interface TaxFormProps {
 // TaxFormComponent: Component for entering income and selecting tax year, then calculating the tax
 const TaxFormComponent: React.FC<TaxFormProps> = ({ income, year, setIncome, setYear, handleCalculate, loading }) => {
   return (
-    <form className="tax-form">
+    <form className="tax-form" data-testid="tax-form-component">
       {/*  Input group for annual income */}
       <div className="input-group">
         <label htmlFor="annualIncome" className="input-label">

@@ -19,7 +19,7 @@ const TaxDisplayComponent: React.FC<Props> = ({ taxAmounts, income }) => {
   const effectiveMargin = income !== 0 && !isNaN(income) ? (total / income) * 100 : 0;
 
   return (
-    <div className="tax-display-container">
+    <div className="tax-display-container" data-testid="tax-display-component">
       <div className="summary-section">
         <div className="summary-item">
           <label>Effective Margin</label>

@@ -1,6 +1,5 @@
 import { render } from "@testing-library/react";
 import Notification from "./Notification";
-import ReactDOM from "react-dom";
 
 const portalRoot = document.createElement("div");
 portalRoot.setAttribute("id", "notification-root");
@@ -11,7 +10,7 @@ beforeEach(() => {
 
 afterEach(() => {
   if (portalRoot) {
-    document.body.appendChild(portalRoot);
+    document.body.removeChild(portalRoot);
   }
 });
 
@@ -27,8 +26,8 @@ describe("Case 1. Notification Component", () => {
     //Render element
     const { queryByText } = render(<Notification arrMessages={["Message1", "Message2"]} />);
 
-    expect(queryByText("Message1")).not.toBeNull();
-    expect(queryByText("Message2")).not.toBeNull();
+    expect(queryByText("Message1")).toBeInTheDocument();
+    expect(queryByText("Message2")).toBeInTheDocument();
   });
 
   // 3. Portal Rendering Test
@@ -42,7 +41,6 @@ describe("Case 1. Notification Component", () => {
   // 4. No Messages Test
   it("4.1 Renders nothing when there are no messages", () => {
     const { container } = render(<Notification arrMessages={[]} />);
-
     expect(container.textContent).toBe("");
   });
 

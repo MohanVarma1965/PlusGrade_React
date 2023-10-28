@@ -18,4 +18,14 @@ describe("Case 1. Spinner Component", () => {
     const loaderElement = container.querySelector(".loader");
     expect(loaderElement).toBeTruthy();
   });
+
+  it("1.4 Has accessibility label", () => {
+    const { getByLabelText } = render(<Spinner />);
+    expect(getByLabelText("Loading...")).toBeInTheDocument();
+  });
+
+  it("1.5 matches snapshot", () => {
+    const { asFragment } = render(<Spinner />);
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
