@@ -13,7 +13,6 @@ import { initialState } from "./tacCalculator_state";
  * Async thunk action to fetch tax brackets for a given year.
  * Handles possible errors from the API call.
  */
-
 export const fetchTaxBrackets = createAsyncThunk<TaxBracket[], number, { rejectValue: string }>(
   "taxCalculator/fetchTaxBrackets",
   async (year: number, { rejectWithValue }) => {

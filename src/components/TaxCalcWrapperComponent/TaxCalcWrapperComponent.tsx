@@ -48,9 +48,9 @@ const TaxCalcWrapperComponent: React.FC = () => {
   }, [income, taxBrackets]);
 
   return (
-    <div>
+    <React.Fragment>
       {/* This will attach the spinner if loading is set to true*/}
-      <Spinner visible={loading} />
+      {loading && <Spinner />}
       {error && <Notification arrMessages={[SERVER_ERROR_PREPEND_TEXT, error, PLEASE_TRY_AGAIN_TEXT]} />}
       {/* Tax Form component for user inputs*/}
       <TaxFormComponent
@@ -74,7 +74,7 @@ const TaxCalcWrapperComponent: React.FC = () => {
           </div>
         </div>
       )}
-    </div>
+    </React.Fragment>
   );
 };
 
