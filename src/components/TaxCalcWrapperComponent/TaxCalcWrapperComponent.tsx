@@ -21,9 +21,11 @@ const TaxCalcWrapperComponent: React.FC = () => {
   const [taxAmounts, setTaxAmounts] = useState<number[]>([]);
 
   // Grab below details from store
-  const loading = useSelector((state: RootState) => state.taxCalculator.loading);
-  const taxBrackets = useSelector((state: RootState) => state.taxCalculator.taxBrackets);
-  const error = useSelector((state: RootState) => state.taxCalculator.error);
+  const { loading, taxBrackets, error } = useSelector((state: RootState) => ({
+    loading: state.taxCalculator.loading,
+    taxBrackets: state.taxCalculator.taxBrackets,
+    error: state.taxCalculator.error,
+  }));
 
   // Dispatch
   const dispatch = useDispatch<AppDispatch>();
