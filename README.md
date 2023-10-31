@@ -1,43 +1,40 @@
 ![Tax Calculator](docs/images/taxCalcOverview.gif)
 
-# Getting Started with Tax Calculator Application
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-### Installation
+##### Installation
 
 Step by step instructions on how to install and utilize the application.
 
-#### Clone the repository using below URL
+1. Clone the repository using below URL
 
-git clone https://github.com/MohanVarma1965/PlusGrade_React.git
+   - git clone https://github.com/MohanVarma1965/PlusGrade_React.git
 
-#### Navigate to project directory
+2. Navigate to project directory
 
-cd PlusGrade_React
+   - cd PlusGrade_React
 
-#### Install Dependencies
+3. Install Dependencies
 
-npm install
+   - npm install
 
-#### Start the development server
+4. Start the development server
 
-npm start
+   - npm start
 
-#### To run the unit test cases
+5. npm start command opens the application directly in
 
-npm test
+   - http://localhost:3000
 
-#### To setup API locally
+6. To run the unit test cases
 
-In order to run the API locally, please follow these instructions:
+   - npm test
 
-docker pull ptsdocker16/interview-test-server
-docker run --init -p 5000:5000 -it ptsdocker16/interview-test-server
+##### To setup API locally
 
-#### npm start command opens the application directly in
+1. In order to run the API locally, please follow these instructions:
 
-http://localhost:3000
+> docker pull ptsdocker16/interview-test-server
+> docker run --init -p 5000:5000 -it ptsdocker16/interview-test-server
+> Navigate to http://localhost:5000. You should be greeted with this set of instructions, and access to the different available endpoints. The following are the relevant endpoints:
 
 ## Available Scripts
 
@@ -47,15 +44,6 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-### Need to pull and run the Docer image to access the API
-
-In order to run the API locally, please follow these instructions:
-
-docker pull ptsdocker16/interview-test-server
-docker run --init -p 5000:5000 -it ptsdocker16/interview-test-server
-
-Navigate to http://localhost:5000. You should be greeted with this set of instructions, and access to the different available endpoints. The following are the relevant endpoints:
 
 ### Appplication Details
 
