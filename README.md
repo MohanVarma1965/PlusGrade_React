@@ -4,6 +4,41 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### Installation
+
+Step by step instructions on how to install and utilize the application.
+
+#### Clone the repository using below URL
+
+git clone https://github.com/MohanVarma1965/PlusGrade_React.git
+
+#### Navigate to project directory
+
+cd PlusGrade_React
+
+#### Install Dependencies
+
+npm install
+
+#### Start the development server
+
+npm start
+
+#### To run the unit test cases
+
+npm test
+
+#### To setup API locally
+
+In order to run the API locally, please follow these instructions:
+
+docker pull ptsdocker16/interview-test-server
+docker run --init -p 5000:5000 -it ptsdocker16/interview-test-server
+
+#### npm start command opens the application directly in
+
+http://localhost:3000
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -12,24 +47,6 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### Need to pull and run the Docer image to access the API
 
