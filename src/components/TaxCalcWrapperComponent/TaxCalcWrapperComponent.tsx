@@ -8,6 +8,7 @@ import TaxDisplayComponent from "../TaxDisplayComponent/TaxDisplayComponent";
 import TaxChartComponent from "../TaxChartComponent/TaxChartComponent";
 import "./TaxCalculatorWrapper.css";
 
+// Main / Wrapper component
 const TaxCalcWrapperComponent: React.FC = () => {
   // Custom hook to encapsulate tax calculation logic and state management.
   const { income, setIncome, year, loading, error, taxAmounts, handleCalculate, handleSetYearChange } =
@@ -16,7 +17,9 @@ const TaxCalcWrapperComponent: React.FC = () => {
   return (
     <React.Fragment>
       {loading && <Spinner />}
+      {/* Display error from server */}
       {error && <Notification arrMessages={[SERVER_ERROR_PREPEND_TEXT, error, PLEASE_TRY_AGAIN_TEXT]} />}
+      {/* Display input fields to user and provides option to click calculate tax button */}
       <TaxFormComponent
         income={income}
         year={year}

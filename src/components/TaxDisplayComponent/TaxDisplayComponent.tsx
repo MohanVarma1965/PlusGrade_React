@@ -8,6 +8,7 @@ interface Props {
   income: number;
 }
 
+// Displays the effective margin and total taxes and individual tax brackets
 const TaxDisplayComponent: React.FC<Props> = ({ taxAmounts, income }) => {
   const taxBrackets = useSelector((state: RootState) => state.taxCalculator.taxBrackets);
   // Ensure taxAmounts contains only valid numbers
