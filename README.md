@@ -1,6 +1,8 @@
 ![Tax Calculator](docs/images/taxCalcOverview.gif)
 
-##### Installation
+# Installation
+
+---
 
 Step by step instructions on how to install and utilize the application.
 
@@ -28,13 +30,13 @@ Step by step instructions on how to install and utilize the application.
 
    - npm test
 
-##### To setup API locally
+## To setup API locally
 
 1. In order to run the API locally, please follow these instructions:
 
-> docker pull ptsdocker16/interview-test-server
-> docker run --init -p 5000:5000 -it ptsdocker16/interview-test-server
-> Navigate to http://localhost:5000. You should be greeted with this set of instructions, and access to the different available endpoints. The following are the relevant endpoints:
+   - docker pull ptsdocker16/interview-test-server
+   - docker run --init -p 5000:5000 -it ptsdocker16/interview-test-server
+   - Navigate to http://localhost:5000. You should be greeted with this set of instructions, and access to the different available endpoints. The following are the relevant endpoints:
 
 ## Available Scripts
 
