@@ -11,12 +11,9 @@ export const useTaxCalculation = (initialIncome: number, initialYear: number) =>
   const [taxAmounts, setTaxAmounts] = useState<number[]>([]);
 
   // Fetch the current loading state, tax brackets data, and potential errors from the Redux store.
-  const { loading, taxBrackets, error } = useSelector((state: RootState) => ({
-    loading: state.taxCalculator.loading,
-    taxBrackets: state.taxCalculator.taxBrackets,
-    error: state.taxCalculator.error,
-  }));
-
+  const taxBrackets = useSelector((state: RootState) => state.taxCalculator.taxBrackets);
+  const loading = useSelector((state: RootState) => state.taxCalculator.loading);
+  const error = useSelector((state: RootState) => state.taxCalculator.error);
   const dispatch = useDispatch<AppDispatch>();
 
   const handleCalculate = () => {
@@ -31,9 +28,10 @@ export const useTaxCalculation = (initialIncome: number, initialYear: number) =>
     dispatch(resetTaxBrackets());
   };
 
+  const newTaxAmounts = CalculateTaxAmountsUtil(income, taxBrackets);
   // Recompute tax amounts whenever income or tax brackets change.
+
   useEffect(() => {
-    const newTaxAmounts = CalculateTaxAmountsUtil(income, taxBrackets);
     setTaxAmounts(newTaxAmounts);
   }, [income, taxBrackets]);
 
